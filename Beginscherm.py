@@ -1,4 +1,5 @@
 from tkinter import *
+import API
 from tkinter.messagebox import showinfo
 
 window = Tk()
@@ -7,12 +8,24 @@ textLabel=Label(master=window, background="Green", width=50, height=40)
 textLabel.pack(side=LEFT)
 
 def klik_vandaag():
-    vandaagLabel = Label(master=window, text="Film 1\n\n\nFilm 2\n\n\nFilm 3\n\n\nFilm 4\n\n\nFilm 5", background="Green")
-    vandaagLabel.place(x=30, y=50)
+    dictionary = API.ophalenFilms("Vandaag")
+
+    films = dictionary['filmsoptv']['film']
+    y=50
+    for film in films:
+        vandaagLabel = Label(master=window, text=film['titel'])
+        vandaagLabel.place(x=30, y=y)
+        y+=20
 
 def klik_morgen():
-    morgenLabel = Label(master=window, text="Film 1\n\n\nFilm 2\n\n\nFilm 3\n\n\nFilm 4\n\n\nFilm 5", background="Green")
-    morgenLabel.place(x=265, y=50)
+    dictionary = API.ophalenFilms("Morgen")
+
+    films = dictionary['filmsoptv']['film']
+    y=50
+    for film in films:
+        vandaagLabel = Label(master=window, text=film['titel'])
+        vandaagLabel.place(x=210, y=y)
+        y+=20
 
 knop_vandaag = Button(window, text="Vandaag", command=klik_vandaag)
 knop_vandaag.place(x=10, y=10)
