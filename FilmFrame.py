@@ -10,7 +10,7 @@ def run(titel,dag,id):
     window.mainloop()
 
 def showKaartje(titel,id):
-    kaartje.show(koop(titel,id), id)
+    kaartje.show(koop(titel,id), id, titel)
 
 def koop(titel, id):
     invoer = titel + id
