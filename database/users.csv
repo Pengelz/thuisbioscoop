@@ -1,0 +1,6 @@
+id,username,password,email,type
+1,"aanbieder1","bios","frankzuidam@hotmail.com","aanbieder"
+2,"bezoeker1","film","bezoeker1@hotmail.com","bezoeker"
+3,"bezoeker2","film","bezoeker2@hotmail.com","bezoeker"
+4,"bezoeker3","film","bezoeker3@hotmail.com","bezoeker"
+5,"aanbieder2","bios","aanbieder2@hotmail.com","aanbieder"
