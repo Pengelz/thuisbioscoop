@@ -14,3 +14,12 @@ def ophalenFilms(invoer):
     inhoud = xmltodict.parse(request.text)
 
     return inhoud
+
+def ophalenInfo(titel, dag):
+
+    dictionary = ophalenFilms(dag)
+    films = dictionary['filmsoptv']['film']
+    for film in films:
+        if film['titel'] == titel:
+            return film
+    return None

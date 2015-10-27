@@ -9,6 +9,7 @@ class LoginFrame(Frame):
         super().__init__(master)
 
         self.username = ""
+        self.id = ""
 
         self.label_1 = Label(self, text="Gebruiker")
         self.label_2 = Label(self, text="Wachtwoord")
@@ -29,7 +30,7 @@ class LoginFrame(Frame):
         if self.login(username, password):
             tm.showinfo("Login info", "Welkom " + str(self.username))
             root.destroy()
-            Beginscherm.beginscherm()
+            Beginscherm.beginscherm(self.id)
 
         else:
             tm.showerror("Login error", "Incorrecte gebruikersnaam/wachtwoord")
@@ -40,6 +41,7 @@ class LoginFrame(Frame):
             for row in reader:
                 if row["username"] == username and row["password"] == password:
                     self.username = row["username"]
+                    self.id = row["id"]
                     return True
 
             return False
