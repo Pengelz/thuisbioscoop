@@ -1,0 +1,25 @@
+from tkinter import *
+from tkinter.messagebox import showinfo
+root = Tk()
+
+def registratie():
+    showinfo(message='Geregistreerd!')
+
+naam = Label(root, text='Geef uw naam aub: ')
+wachtwoord = Label(root, text='Geef een wachtwoord aub: ')
+
+nnaam.grid(row=0, sticky=E)
+nwachtwoord.grid(row=1, sticky=E)
+
+entry1 = Entry(root)
+entry2 = Entry(root,show="*")
+entry1.grid(row=0, column=1)
+entry2.grid(row=1, column=1)
+
+registreerbutton = Button(root, text='Registreren')
+registreerbutton.grid(column=1)
+
+stopButton = Button(root, text='ALLU AKBAR', command=root.quit)
+stopButton.grid(column=1)
+
+root.mainloop()
