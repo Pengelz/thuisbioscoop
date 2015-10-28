@@ -14,7 +14,6 @@ def showKaartje(titel,id):
 
 def koop(titel, id):
     invoer = titel + id
-    print(invoer)
     enc2 = ""
     for i in invoer:
         enc = ord(i) + 3

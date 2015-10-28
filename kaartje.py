@@ -12,7 +12,6 @@ def show(code, id,titel):
     label2 = Label(image=image)
     label2.image=image
     label2.pack()
-    print(qr)
     window.mainloop()
 def save(code,id,titel):
     file = open('database/gekocht.csv', 'a', newline='')
