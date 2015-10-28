@@ -2,6 +2,7 @@ from csv import DictReader
 from tkinter import *
 import tkinter.messagebox as tm
 import Beginscherm
+import adminscherm
 
 
 class LoginFrame(Frame):
@@ -10,6 +11,7 @@ class LoginFrame(Frame):
 
         self.username = ""
         self.id = ""
+        self.type = ""
 
         self.label_1 = Label(self, text="Gebruiker")
         self.label_2 = Label(self, text="Wachtwoord")
@@ -27,10 +29,15 @@ class LoginFrame(Frame):
         username = self.entry_1.get()
         password = self.entry_2.get()
 
-        if self.login(username, password):
+        if self.login(username, password) == "bezoeker":
             tm.showinfo("Login info", "Welkom " + str(self.username))
             root.destroy()
             Beginscherm.beginscherm(self.id)
+
+        elif self.login(username, password) == "aanbieder":
+            tm.showinfo("Login info", "Welkom " + str(self.username))
+            root.destroy()
+            adminscherm.adminscherm(self.id)
 
         else:
             tm.showerror("Login error", "Incorrecte gebruikersnaam/wachtwoord")
@@ -39,11 +46,16 @@ class LoginFrame(Frame):
         with open('database/users.csv') as csvfile:
             reader = DictReader(csvfile)
             for row in reader:
-                if row["username"] == username and row["password"] == password:
+                if row["username"] == username and row["password"] == password and row["type"] == "aanbieder":
                     self.username = row["username"]
                     self.id = row["id"]
-                    return True
-
+                    self.type = row["type"]
+                    return self.type
+                elif row["username"] == username and row["password"] == password and row["type"] == "bezoeker":
+                    self.username = row["username"]
+                    self.id = row["id"]
+                    self.type = row["type"]
+                    return self.type
             return False
 
     def showLogin(self):
