@@ -5,12 +5,12 @@ import kaartje
 def run(titel,dag,id):
     window = Tk()
     film = API.ophalenInfo(titel,dag)
-    kopen = Button(window, text="Kaartje kopen", command=lambda :showKaartje(titel,id, film['zender']))
+    kopen = Button(window, text="Kaartje kopen", command=lambda :showKaartje(titel,id, film['zender'],film['starttijd']))
     kopen.place(x=10, y=10)
     window.mainloop()
 
-def showKaartje(titel,id, aanbieder):
-    kaartje.show(koop(titel,id), id, titel, aanbieder)
+def showKaartje(titel,id, aanbieder, starttijd):
+    kaartje.show(koop(titel,id), id, titel, aanbieder, starttijd)
 
 def koop(titel, id):
     invoer = titel + id
