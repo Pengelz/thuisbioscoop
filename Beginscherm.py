@@ -68,7 +68,9 @@ def beginscherm(id):
             y += 20
 
     def openFilm(titel,dag):
+        window.destroy()
         FilmFrame.run(titel, dag, id)
+
 
 
     knop_vandaag = Button(window, text="Vandaag", command=klik_vandaag)

@@ -23,6 +23,5 @@ def save(code, id, titel, aanbieder, starttijd):
     write = csv.writer(file)
     write.writerow((id, code, titel, aanbieder, starttijd))
     file.close()
-    return None
 
 
