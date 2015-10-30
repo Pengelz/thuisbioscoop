@@ -109,6 +109,8 @@ class LoginFrame(Frame):
 
 root = Tk()
 loginFrame = LoginFrame(root)
+root.title("Filmtotaal Thuisbioscoop")
 root.resizable(width=FALSE, height=FALSE)
-root.geometry("800x600")
+root.geometry("600x600")
+root.configure(bg='#9BA6C4')
 root.mainloop()

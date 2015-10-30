@@ -6,7 +6,7 @@ def beginscherm(id):
 
     window = Tk()
 
-    textLabel=Label(master=window, background="Green", width=80, height=40)
+    textLabel=Label(master=window, background="#9BA6C4", width=80, height=40)
     textLabel.pack(side=LEFT)
 
     def klik_vandaag():

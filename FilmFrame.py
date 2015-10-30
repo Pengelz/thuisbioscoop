@@ -56,6 +56,7 @@ def run(titel,dag,id):
     pil_image = Image.open(data_stream)
     tk_image = ImageTk.PhotoImage(pil_image)
     photolabel=Label(image=tk_image)
-    photolabel.place(x=10,y=200)
+    photolabel.place(x=210,y=30)
+    window.geometry("800x600")
     window.mainloop()
 
